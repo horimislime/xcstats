@@ -6,11 +6,11 @@ import PackageDescription
 let package = Package(
     name: "xcstats",
     dependencies: [
-        .package(url: "https://github.com/xcodeswift/xcproj.git", .upToNextMajor(from: "1.8.0")),
+        .package(url: "https://github.com/tuist/xcodeproj.git", .upToNextMajor(from: "6.2.0")),
     ],
     targets: [
         .target(
             name: "xcstats",
-            dependencies: ["xcproj"]),
+            dependencies: ["xcodeproj"]),
     ]
 )

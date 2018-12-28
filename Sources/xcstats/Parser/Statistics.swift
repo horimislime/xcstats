@@ -1,4 +1,3 @@
-import CarthageKit
 import Foundation
 import SwiftSyntax
 
@@ -102,14 +101,8 @@ enum PackageManagerStatistics: StatisticsGenerator {
         
         var stats: [Statistics.PairValue] = []
         
-        if let cartfile = files.filter({ $0.type == .cartfile }).first {
-            switch Cartfile.from(file: cartfile.url) {
-            case .success(let c):
-                stats.append(Statistics.PairValue(title: "Carthage", value: "\(c.dependencies.values.count) dependencies"))
-            case .failure:
-                Logger.shared.warn("Failed to parse \(cartfile.url).")
-                stats.append(Statistics.PairValue(title: "Carthage", value: "Unknown"))
-            }
+        if let file = files.filter({ $0.type == .cartfile }).first, let cartfile = Cartfile.from(fileURL: file.url) {
+            stats.append(Statistics.PairValue(title: "Carthage", value: "\(cartfile.dependencies.count) dependencies"))
         }
         
         if let file = files.filter({ $0.type == .podfile }).first, let podfile = Podfile.from(fileURL: file.url) {

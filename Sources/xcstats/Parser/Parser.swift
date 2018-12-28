@@ -1,4 +1,3 @@
-import CarthageKit
 import Foundation
 import SwiftSyntax
 

@@ -7,7 +7,6 @@ let package = Package(
     name: "xcstats",
     dependencies: [
         .package(url: "git@github.com:apple/swift-package-manager.git", .exact("0.3.0")),
-        .package(url: "git@github.com:Carthage/Carthage.git", .exact("0.31.2")),
         .package(url: "git@github.com:apple/swift-syntax.git", .exact("0.40200.0")),
         .package(url: "git@github.com:tuist/xcodeproj.git", .exact("6.3.0"))
     ],
@@ -15,7 +14,6 @@ let package = Package(
         .target(
             name: "xcstats",
             dependencies: [
-                "CarthageKit",
                 "SwiftSyntax",
                 "Utility",
                 "xcodeproj"

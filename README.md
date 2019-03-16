@@ -19,7 +19,7 @@ This project leverages [SwiftSyntax](https://github.com/apple/swift-syntax) to g
 Using homebrew:
 
 ```
-$ brew tap horimislime/xcstats-tap
+$ brew tap horimislime/taproom
 $ brew install xcstats
 ```
 
